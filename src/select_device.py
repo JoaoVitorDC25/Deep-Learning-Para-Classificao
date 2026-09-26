@@ -2,6 +2,14 @@ import torch
 
 
 def select_device():
+    """
+    Seleciona o dispositivo de execução (GPU ou CPU) para o PyTorch.
+    Prioridade:
+    1. GPU NVIDIA (CUDA)
+    2. GPU Apple (MPS)
+    3. CPU
+    """
+    
     if torch.cuda.is_available():
         # Prioridade 1: GPU NVIDIA (CUDA)
         device = torch.device("cuda")

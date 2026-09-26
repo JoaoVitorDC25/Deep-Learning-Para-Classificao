@@ -1,6 +1,10 @@
 import torch
 
 def evaluate_model(loader_teste, device, model,classes):
+    """
+    Avalia o desempenho do modelo treinado no conjunto de teste.
+    Calcula a acurácia geral e a acurácia por classe.
+    """
     
     # Desativa o cálculo de gradientes (não é necessário durante a avaliação)
     with torch.no_grad():
